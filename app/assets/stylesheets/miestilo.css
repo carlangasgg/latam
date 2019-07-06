@@ -29,7 +29,7 @@ body{
 }
 
 .row{
-	display: table-row
+	display: table-row;
 	content: none;
 	clear: both;
 }
