@@ -1,0 +1,24 @@
+<h1>Pins súper dúper bonitos</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Pin</th>
+			<th>Editar</th>
+			<th>Borrar</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<%@pin.all.each do |pin|%>
+		<tr>
+			<td> <%= pin.titulo %> | <%= pin.descripcion %></td>
+			<td><%= link_to "o" ,edit_pin_path(pin)%></td>
+			<td><%= link_to "x" , pin, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<div>
+	<a href= <%= new_pin_path %> , class="btn btn-primary", role="button", aria-pressed="true"> 'Agregar Pin' </a>
+</div>

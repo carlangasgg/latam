@@ -1,0 +1,7 @@
+<h1>Editar Pin</h1>
+
+<%= form_for @pin do |f| %>
+	<%= f.text_field :titulo, placeholder: "titulo" %> <br>
+	<%= f.text_field :descripcion, placeholder: "descripcion"%> <br>
+	<%= f.submit %>
+<% end %>
