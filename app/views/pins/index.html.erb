@@ -1,23 +1,17 @@
 <h1>Pins súper dúper bonitos</h1>
 
-<table>
-	<thead>
-		<tr>
-			<th>Pin</th>
-			<th>Editar</th>
-			<th>Borrar</th>			
-		</tr>
-	</thead>
-	<tbody>
-		<%@pin.all.each do |pin|%>
-		<tr>
-			<td> <%= pin.titulo %> | <%= pin.descripcion %></td>
-			<td><%= link_to "o" ,edit_pin_path(pin)%></td>
-			<td><%= link_to "x" , pin, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="card-columns">
+	<%@pin.all.each do |pin|%>
+		<div class="card">
+		  <%= image_tag(pin.imagen, class: "card-img-top") %>
+		  <div class="card-body">
+		    <h5 class="card-title"><%= pin.titulo %></h5>
+		    <p class="card-text"><%= pin.descripcion %></p>
+		    <a href="#" class="btn btn-primary">Go somewhere</a>
+		  </div>
+		</div>
+	<% end -%>
+</div>
 
 <div>
 	<a href= <%= new_pin_path %> , class="btn btn-primary", role="button", aria-pressed="true"> 'Agregar Pin' </a>

@@ -6,6 +6,8 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
           <%= f.email_field :email%>
+          <%= f.text_field :name%>
+          <%= f.text_field :address%>
 
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
