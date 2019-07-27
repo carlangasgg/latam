@@ -14,13 +14,16 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Contacto</a>
       </li>      
+      <li class="nav-item">
+        <a class="nav-link" href= <%= pins_path %> >Pins</a>
+      </li>            
       <li>
         <a class="nav-link btn-success text-white" href= <%= new_pin_path %> ><strong>Agrega tu pin</strong></a>
       </li>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action=" <%= pins_path %>">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
@@ -33,6 +36,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href= <%= edit_user_registration_path %>>Editar usuario</a> 
+              <a class="dropdown-item" href= <%= tus_pins_pin_path(current_user) %>>Tus pins</a> 
               <div class="dropdown-divider"></div>
               <%= link_to('Cerrar sesión', destroy_user_session_path, class: "dropdown-item", method: :delete) %>  
             </div>

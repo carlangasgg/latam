@@ -6,6 +6,7 @@
 		<%= bootstrap_form_for @pin do |f| %>
 			<%= f.text_field :titulo, placeholder: "titulo" %> <br>
 			<%= f.text_field :descripcion, placeholder: "descripcion"%> <br>
+			<%= f.file_field :imagen %> <br>
 			<%= f.submit %>
 		<% end %>
 	</div>

@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/about'
   get 'pages/contact'
-  resources :pins
+  resources :pins do
+    get :tus_pins, on: :member
+    get :dar_like, on: :member
+  end
 
   get '/pins', to: 'pins#show'  
 
