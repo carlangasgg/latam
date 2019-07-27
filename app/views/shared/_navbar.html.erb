@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Nosotros</a>
+        <a class="nav-link" href=<%= pages_about_path %> >Nosotros</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
+      <li class="nav-item"> 
+        <a class="nav-link" href=<%= pages_contact_path %> >Contacto</a>
       </li>      
       <li class="nav-item">
         <a class="nav-link" href= <%= pins_path %> >Pins</a>
@@ -32,7 +32,11 @@
           <li class="nav-item dropdown container">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.name %>
-              <%= image_tag("man.png", size:40, class: "nav-item avatar")%> 
+              <% if current_user.avatar.attached?%>
+                <%= image_tag(current_user.avatar, size:40, class: "nav-item avatar")%> 
+              <% else %>
+                <%= image_tag("man.png", size:40, class: "nav-item avatar")%> 
+              <% end %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href= <%= edit_user_registration_path %>>Editar usuario</a> 

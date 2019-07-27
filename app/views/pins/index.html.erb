@@ -11,11 +11,13 @@
 		  <div class="card-body">
 		    <h5 class="card-title"><%= pin.titulo %></h5>
 		    <p class="card-text"><%= pin.descripcion %></p>
-		    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-		    	<div class="btn-group mr-2" role="group" aria-label="Basic example">
-			    	<a href="#" class="btn btn-outline-success"><i class="fa fa-cog">Editar</i></a>
+		    <div class="btn-toolbar" role="toolbar">
+		    	<% if mostrar_botones(pin.id)%>
+		    	<div class="btn-group mr-2" role="group">
+			    	<a class="btn btn-outline-success" href= <%= edit_pin_path(pin.id) %> ><i class="fa fa-cog">Editar</i></a>
 			    	<a href="#" class="btn btn-outline-danger"><i class="fa fa-trash">Borrar</i></a>
 			    </div>
+			    <% end %>
 			    <div class="btn-group mr-2" role="group">
 			    	<% if like?(pin.id) %>
 		    			<a class="btn btn-primary" href= <%= dar_like_pin_path(pin.id) %> ><i class="fa fa-thumbs-up"> <%= pin.likes.count %></i></a>

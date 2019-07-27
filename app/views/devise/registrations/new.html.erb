@@ -8,6 +8,7 @@
           <%= f.email_field :email%>
           <%= f.text_field :name%>
           <%= f.text_field :address%>
+          <%= f.file_field :avatar%>
 
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>

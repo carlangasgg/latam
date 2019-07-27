@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
   	if params[:q].present?
       @pin = Pin.where('titulo like ?', "%#{params[:q]}")

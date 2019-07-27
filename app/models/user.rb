@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :pins
   has_many :likes
-  has_one_attached :avatar       
+  has_one_attached :avatar     
+
+  enum clase: %i[admin owner]  
 end

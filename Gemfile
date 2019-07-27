@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem "bootstrap_form", ">= 4.2.0"
 
+gem 'cancancan'
+
 gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb

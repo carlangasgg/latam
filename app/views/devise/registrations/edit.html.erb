@@ -1,4 +1,4 @@
-<h2 class="text-center">Easddit <%= resource_name.to_s.humanize %></h2>
+<h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
@@ -8,6 +8,7 @@
           <%= f.email_field :email%>
           <%= f.text_field :name%>
           <%= f.text_field :address%>
+          <%= f.file_field :avatar%>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
