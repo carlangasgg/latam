@@ -1,7 +1,13 @@
-<h1>Agregar Pin</h1>
+<h1 class="text-center">Agregar Pin</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
 
-<%= form_for @pin do |f| %>
-	<%= f.text_field :titulo, placeholder: "titulo" %> <br>
-	<%= f.text_field :descripcion, placeholder: "descripcion"%> <br>
-	<%= f.submit %>
-<% end %>
+		<%= bootstrap_form_for @pin do |f| %>
+			<%= f.text_field :titulo, placeholder: "titulo" %> <br>
+			<%= f.text_field :descripcion, placeholder: "descripcion"%> <br>
+			<%= f.submit %>
+		<% end %>
+	</div>
+  </div>
+</div>
